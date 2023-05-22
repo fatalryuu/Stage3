@@ -52,3 +52,174 @@ const countSheep = (num) => {
 function spEng(sentence) {
     return sentence.toLowerCase().includes("english");
 }
+
+// Jubilee Year (6)
+
+
+
+// Day of The Week (7)
+
+
+
+// Is the date today (8)
+
+
+
+// Days in the year (9)
+
+
+
+// Count word occurrences (10)
+
+
+
+// Print Fixed Size Two Dimensional Table (11)
+
+
+
+// Check the exam (12)
+
+
+
+// isReallyNaN (13)
+
+
+
+// File Finder (14)
+
+
+
+// Building a mini search engine (15)
+
+
+
+// Search for letters (16)
+
+
+
+// Largest Elements (17)
+
+
+
+// Countdown - Longest Word (18)
+
+
+
+// Compound Nouns, Common Nouns, and Adjectives Test (19)
+
+
+
+// Correct the time-string (20)
+
+
+
+// Extract Values and Units (21)
+
+
+
+// Remove the time (22)
+
+
+
+// Defend your castle (23)
+
+
+
+// Count strings in objects (24)
+
+
+
+// Back to the Future? (25)
+
+
+
+// Welcome! (26)
+
+
+
+// Give me the k first digits. Odd digits. (27)
+
+
+
+// Sorting Arrays ... wait, what?! (28)
+
+
+
+// Find the Difference in Age between Oldest and Youngest Family Members (29)
+
+
+
+// Blood-Alcohol Content (30)
+
+
+
+// Generate An Array of Unique Strings (31)
+
+
+
+// Length of the longest sequence of consecutive integers (32)
+
+
+
+// Implementing a Queue (33)
+
+
+
+// Playing with Sets : Equal or Not ? (34)
+
+
+
+// Playing with Sets : Intersection (35)
+
+
+
+// Logical calculator (36)
+
+
+
+// Sum of differences in array (37)
+
+
+
+// Additive Numbers (38)
+
+
+
+// dataTypes String to Array (39)
+
+
+
+// Captcha parser (40)
+
+
+
+// My Aunt Sally (41)
+
+
+
+// Podcast Speed Listening Calculator (42)
+
+
+
+// Timmy Time (43)
+
+
+
+// Parsing Commandline Arguments (44)
+
+
+
+// ES6 string addition (45)
+
+
+
+// L1: Bartender, drinks! (46)
+
+
+
+// Well of Ideas - Easy Version (47)
+
+
+
+// Power .bind() (48)
+
