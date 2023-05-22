@@ -46,3 +46,9 @@ const countSheep = (num) => {
 
     return result;
 }
+
+// Do you speak "English"? (5)
+
+function spEng(sentence) {
+    return sentence.toLowerCase().includes("english");
+}
