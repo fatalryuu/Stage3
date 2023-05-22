@@ -36,3 +36,13 @@ const sumAverage = (arr) => {
 
 // If you can't sleep, just count sheep!! (4)
 
+const countSheep = (num) => {
+    const sheep = "sheep...";
+    let result = "";
+
+    for (let i = 0; i < num; i++) {
+        result += (i + 1) + " " + sheep;
+    }
+
+    return result;
+}
