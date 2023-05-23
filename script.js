@@ -84,7 +84,12 @@ function isToday(date) {
 
 // Days in the year (9)
 
-
+function yearDays(year) {
+    if (year === 0) {
+        return `${year} has 366 days`;
+    }
+    return `${year} has ${year % 4 === 0  && year % 100 !== 0 ? 366 : 365} days`;
+}
 
 // Count word occurrences (10)
 
