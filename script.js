@@ -93,7 +93,24 @@ function yearDays(year) {
 
 // Count word occurrences (10)
 
+const wordCounter = function(text) {
+    const wordCounts = Object.create(null);
 
+    const countWords = (text) => {
+        const words = text.split(/[.,\s]+/);
+        for (let word of words) {
+            if (word !== '') {
+                wordCounts[word] = (wordCounts[word] || 0) + 1;
+            }
+        }
+    };
+
+    countWords(text);
+
+    return {
+        count: (word) => wordCounts[word] || 0
+    };
+};
 
 // Print Fixed Size Two Dimensional Table (11)
 
