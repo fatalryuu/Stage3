@@ -77,7 +77,10 @@ function getDayOfTheWeek(date) {
 
 // Is the date today (8)
 
-
+function isToday(date) {
+    const today = new Date();
+    return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}` === `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`;
+}
 
 // Days in the year (9)
 
