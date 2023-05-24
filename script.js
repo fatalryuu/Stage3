@@ -684,3 +684,10 @@ function well(x) {
 
 // Power .bind() (48)
 
+Function.prototype.bind = function(ctx) {
+    const func = this;
+    return function(...args) {
+        const rightContext = this === globalThis ? ctx : this;
+        return func.apply(rightContext, args);
+    }
+};
