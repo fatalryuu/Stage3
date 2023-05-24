@@ -65,13 +65,20 @@ function isJubilee(year) {
 function getDayOfTheWeek(date) {
     const day = new Date(date).getDay();
     switch (day) {
-        case 0: return "Sunday"
-        case 1: return "Monday"
-        case 2: return "Tuesday"
-        case 3: return "Wednesday"
-        case 4: return "Thursday"
-        case 5: return "Friday"
-        case 6: return "Saturday"
+        case 0:
+            return "Sunday"
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
     }
 }
 
@@ -88,12 +95,12 @@ function yearDays(year) {
     if (year === 0) {
         return `${year} has 366 days`;
     }
-    return `${year} has ${year % 4 === 0  && year % 100 !== 0 ? 366 : 365} days`;
+    return `${year} has ${year % 4 === 0 && year % 100 !== 0 ? 366 : 365} days`;
 }
 
 // Count word occurrences (10)
 
-const wordCounter = function(text) {
+const wordCounter = function (text) {
     const wordCounts = Object.create(null);
 
     const countWords = (text) => {
@@ -385,13 +392,13 @@ function strCount(obj) {
 
 // Back to the Future? (25)
 
-function backToTheFuture (str) {
+function backToTheFuture(str) {
     const months = {
-        'January': { to: 'October', days: 31},
-        'April': { to: 'July', days: 31},
-        'September': { to: 'December', days: 31},
-        'February': { to: 'March', days: 31},
-        'March': { to: 'November', days: 30},
+        'January': {to: 'October', days: 31},
+        'April': {to: 'July', days: 31},
+        'September': {to: 'December', days: 31},
+        'February': {to: 'March', days: 31},
+        'March': {to: 'November', days: 30},
     }
     str = str.split(' ')
     const match = months[str[2]]
@@ -468,7 +475,7 @@ function differenceInAges(ages) {
 
 // Blood-Alcohol Content (30)
 
-function bloodAlcoholContent(drinks, weight, sex, time){
+function bloodAlcoholContent(drinks, weight, sex, time) {
     return Number(((drinks.ounces * drinks.abv * 5.14 / weight * (sex === 'male' ? 0.73 : 0.66)) - 0.015 * time).toFixed(4));
 }
 
@@ -525,24 +532,24 @@ function maxConsecutiveSequenceLength(array) {
             }
         }
     }
-    return  Math.max(...dp);
+    return Math.max(...dp);
 }
 
 // Implementing a Queue (33)
 
-let Queue = function() {
+let Queue = function () {
     this.queue = []; // Массив для хранения элементов очереди
 };
 
-Queue.prototype.enqueue = function(item) {
+Queue.prototype.enqueue = function (item) {
     this.queue.push(item); // Добавление элемента в конец очереди
 };
 
-Queue.prototype.dequeue = function() {
+Queue.prototype.dequeue = function () {
     return this.queue.shift(); // Удаление элемента из начала очереди и возвращение его значения
 };
 
-Queue.prototype.size = function() {
+Queue.prototype.size = function () {
     return this.queue.length; // Возвращает количество элементов в очереди
 };
 
@@ -558,13 +565,13 @@ function notEqual(s1, s2) {
 
 // Playing with Sets : Intersection (35)
 
-function inter(s1, s2){
+function inter(s1, s2) {
     return new Set([...s1].filter(e => s2.has(e)))
 }
 
 // Logical calculator (36)
 
-function logicalCalc(array, op){
+function logicalCalc(array, op) {
     switch (op) {
         case "OR":
             return array.reduce((acc, el) => acc || el);
@@ -598,7 +605,7 @@ function findAdditiveNumbers(num) {
 
 // dataTypes String to Array (39)
 
-function dataTypes (string) {
+function dataTypes(string) {
 
 }
 
@@ -616,26 +623,29 @@ function myAuntSally(str) {
 
 // Podcast Speed Listening Calculator (42)
 
-
+function speedListen(audioLength, playSpeed) {
+    const [h, m, s] = audioLength.split(":").map(Number)
+    const time = h * 3600 + m * 60 + s
+    const newTime = time / playSpeed
+    const newH = Math.floor(newTime / 3600)
+    const newM = Math.floor((newTime - newH * 3600) / 60)
+    const newS = Math.floor(newTime - newH * 3600 - newM * 60)
+    return `${newH.toString().padStart(2, "0")}:${newM.toString().padStart(2, "0")}:${newS.toString().padStart(2, "0")}`
+}
 
 // Timmy Time (43)
-
 
 
 // Parsing Commandline Arguments (44)
 
 
-
 // ES6 string addition (45)
-
 
 
 // L1: Bartender, drinks! (46)
 
 
-
 // Well of Ideas - Easy Version (47)
-
 
 
 // Power .bind() (48)
