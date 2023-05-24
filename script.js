@@ -248,7 +248,31 @@ function longestWord(letters) {
 
 // Compound Nouns, Common Nouns, and Adjectives Test (19)
 
+const nouns = ['123'];
+const adjectives = ['123'];
 
+function part(word) {
+    const states = ["common", "adjective", "compound", "neither"];
+    if (nouns.includes(word)) {
+        return states[0];
+    }
+    if (adjectives.includes(word)) {
+        return states[1];
+    }
+
+    for (let i = 0; i < nouns.length; i++) {
+        for (let j = 0; j < adjectives.length; j++) {
+            if (nouns[i] + nouns[j] === word) {
+                return states[2];
+            }
+            if (adjectives[j] + nouns[i] === word) {
+                return states[2];
+            }
+        }
+    }
+
+    return states[3];
+}
 
 // Correct the time-string (20)
 
