@@ -309,7 +309,12 @@ const addZero = (num) => {
 
 // Extract Values and Units (21)
 
-
+function valAndUnits(s) {
+    let index = 0;
+    s = s.split("");
+    s.map(n => /[-0-9.]/.test(n.toString()) ? index++ : 0);
+    return {val: Number(s.splice(0, index).join("")), units: s.join("").trim()}
+}
 
 // Remove the time (22)
 
