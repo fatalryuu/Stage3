@@ -199,7 +199,10 @@ function searchEng(string, searchWord, searchMethod, newWord) {
 
 // Search for letters (16)
 
-
+function change(string) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    return Array.from(alphabet, letter => string.toLowerCase().includes(letter) ? '1' : '0').join('');
+}
 
 // Largest Elements (17)
 
