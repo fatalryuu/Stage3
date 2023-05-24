@@ -514,7 +514,19 @@ function uniqStrings(size, validPct, strSize) {
 
 // Length of the longest sequence of consecutive integers (32)
 
-
+function maxConsecutiveSequenceLength(array) {
+    if (array.length === 0)
+        return 0;
+    const dp = Array(array.length).fill(1);
+    for (let i = 1; i < array.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (array[i] - array[j] <= 1 && array[i] >= array[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    return  Math.max(...dp);
+}
 
 // Implementing a Queue (33)
 
