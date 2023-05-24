@@ -114,7 +114,23 @@ const wordCounter = function(text) {
 
 // Print Fixed Size Two Dimensional Table (11)
 
-
+function buildTableText(row, column, character) {
+    const dashes = "---------\n";
+    let matrix = "";
+    for (let i = 0; i < 4; i++) {
+        matrix += dashes;
+        matrix += "|";
+        for (let j = 0; j < 4; j++) {
+            if (row === i && column === j) {
+                matrix += character + "|";
+            } else {
+                matrix += " |";
+            }
+        }
+        matrix += "\n";
+    }
+    return matrix + dashes;
+}
 
 // Check the exam (12)
 
