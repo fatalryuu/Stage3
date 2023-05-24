@@ -434,7 +434,18 @@ function greet(language) {
 
 // Give me the k first digits. Odd digits. (27)
 
-
+function findOddDigits(n, k) {
+    n = n.toString().split("");
+    if (k === 0 || k > n.length) {
+        return 0;
+    }
+    let odd = [];
+    n.forEach(el => el % 2 !== 0 ? odd.push(el) : 0);
+    if (!odd || k > odd.length) {
+        return 0;
+    }
+    return Number(odd.splice(0, k).join(""));
+}
 
 // Sorting Arrays ... wait, what?! (28)
 
