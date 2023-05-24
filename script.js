@@ -558,7 +558,9 @@ function notEqual(s1, s2) {
 
 // Playing with Sets : Intersection (35)
 
-
+function inter(s1, s2){
+    return new Set([...s1].filter(e => s2.has(e)))
+}
 
 // Logical calculator (36)
 
