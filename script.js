@@ -635,6 +635,11 @@ function speedListen(audioLength, playSpeed) {
 
 // Timmy Time (43)
 
+const changeTime = (input, delta) => {
+    let [hours, minutes] = input.split(':');
+    let milliseconds = 60 * 1000 * (60 * Number(hours) + Number(minutes) + delta);
+    return new Date(milliseconds).toTimeString().substring(0, 5)
+}
 
 // Parsing Commandline Arguments (44)
 
