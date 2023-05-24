@@ -564,7 +564,16 @@ function inter(s1, s2){
 
 // Logical calculator (36)
 
-
+function logicalCalc(array, op){
+    switch (op) {
+        case "OR":
+            return array.reduce((acc, el) => acc || el);
+        case "AND":
+            return array.reduce((acc, el) => acc && el);
+        case "XOR":
+            return array.reduce((acc, el) => acc != el);
+    }
+}
 
 // Sum of differences in array (37)
 
