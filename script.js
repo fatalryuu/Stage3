@@ -318,7 +318,9 @@ function valAndUnits(s) {
 
 // Remove the time (22)
 
-
+function shortenToDate(longDate) {
+    return longDate.split("").splice(0, longDate.indexOf(",")).join("");
+}
 
 // Defend your castle (23)
 
