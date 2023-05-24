@@ -370,7 +370,18 @@ function defendable(attacker, defender) {
 
 // Count strings in objects (24)
 
-
+function strCount(obj) {
+    let counter = 0;
+    for (let key in obj) {
+        if (typeof obj[key] === "string") {
+            counter++;
+        }
+        if (typeof obj[key] === "object") {
+            counter += strCount(obj[key]);
+        }
+    }
+    return counter;
+}
 
 // Back to the Future? (25)
 
