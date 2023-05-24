@@ -618,7 +618,20 @@ function captchaParser(captcha) {
 // My Aunt Sally (41)
 
 function myAuntSally(str) {
-
+    const arr = str.split(" ");
+    let result = "";
+    arr.forEach(w => {
+        let counter = 1;
+        for (let i = 0; i < w.length - 1; i++) {
+            if (w[i] !== "!" && w[i] !== "?" && w[i] === w[i + 1]) {
+                counter++;
+            }
+        }
+        if (counter === 2) {
+            result += w + " ";
+        }
+    })
+    return result ? result.split("").splice(0, result.length - 1).join("") : "";
 }
 
 // Podcast Speed Listening Calculator (42)
