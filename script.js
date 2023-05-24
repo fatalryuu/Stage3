@@ -671,7 +671,16 @@ function getDrinkByProfession(param) {
 
 // Well of Ideas - Easy Version (47)
 
-
+function well(x) {
+    const counter = x.reduce((acc, el) => el === 'good' ? acc + 1 : acc, 0);
+    if (counter < 1) {
+        return 'Fail!';
+    }
+    if (counter > 2) {
+        return 'I smell a series!';
+    }
+    return 'Publish!';
+}
 
 // Power .bind() (48)
 
