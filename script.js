@@ -643,6 +643,9 @@ const changeTime = (input, delta) => {
 
 // Parsing Commandline Arguments (44)
 
+function args(cmd) {
+    return cmd.replace(/[&;>|].*$/,'').trim().split(' ');
+}
 
 // ES6 string addition (45)
 
