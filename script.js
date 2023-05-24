@@ -324,7 +324,49 @@ function shortenToDate(longDate) {
 
 // Defend your castle (23)
 
+function defendable(attacker, defender) {
+    const powerLevels = {
+        archer: 8,
+        footSoldier: 10,
+        cavalry: 14,
+        artillery: 30
+    }
 
+    let battleValueForAttackers = attacker.archer * powerLevels["archer"] +
+        attacker.footSoldier * powerLevels["footSoldier"] +
+        attacker.cavalry * powerLevels["cavalry"] +
+        attacker.artillery * powerLevels["artillery"] +
+        attacker.armyHp;
+    let battleValueForDefenders = defender.archer * powerLevels["archer"] +
+        defender.footSoldier * powerLevels["footSoldier"] +
+        defender.artillery * powerLevels["artillery"] +
+        defender.armyHp;
+
+    let morale = 1;
+    if (attacker.strategy === "siege") {
+        if (defender.resources === "low") {
+            morale *= 0.5;
+        } else if (defender.resources === "medium") {
+            morale *= 0.75;
+        }
+    }
+    let arrivedInTime = false;
+    if (defender.reinforcements) {
+        if (defender.reinforcements.inTime) {
+            arrivedInTime = true;
+            morale *= 1.5;
+        } else {
+            morale *= 0.75;
+        }
+    } else {
+        morale *= 0.9;
+    }
+    battleValueForDefenders *= morale;
+    if (arrivedInTime) {
+        battleValueForDefenders += defender.reinforcements.battleValue;
+    }
+    return battleValueForAttackers < battleValueForDefenders;
+}
 
 // Count strings in objects (24)
 
