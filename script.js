@@ -449,7 +449,16 @@ function findOddDigits(n, k) {
 
 // Sorting Arrays ... wait, what?! (28)
 
-
+Array.prototype.sort = function () {
+    for (let i = 0; i < this.length; i++) {
+        for (let j = i + 1; j < this.length; j++) {
+            if (this[i] > this[j]) {
+                [this[i], this[j]] = [this[j], this[i]];
+            }
+        }
+    }
+    return this;
+}
 
 // Find the Difference in Age between Oldest and Youngest Family Members (29)
 
