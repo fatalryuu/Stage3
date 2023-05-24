@@ -134,7 +134,11 @@ function buildTableText(row, column, character) {
 
 // Check the exam (12)
 
-
+function checkExam(arr1, arr2) {
+    let grade = 0;
+    arr1.forEach((answer, i) => answer === arr2[i] ? grade += 4 : arr2[i] === "" ? 0 : grade--);
+    return grade < 0 ? 0 : grade;
+}
 
 // isReallyNaN (13)
 
