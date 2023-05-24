@@ -206,7 +206,15 @@ function change(string) {
 
 // Largest Elements (17)
 
-
+function largest(n, array) {
+    let result = [];
+    for (let i = 0; i < n; i++) {
+        const max = Math.max(...array);
+        result.push(max);
+        array.splice(array.indexOf(max), 1);
+    }
+    return result.reverse();
+}
 
 // Countdown - Longest Word (18)
 
