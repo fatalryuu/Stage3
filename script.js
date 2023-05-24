@@ -610,7 +610,9 @@ function captchaParser(captcha) {
 
 // My Aunt Sally (41)
 
+function myAuntSally(str) {
 
+}
 
 // Podcast Speed Listening Calculator (42)
 
