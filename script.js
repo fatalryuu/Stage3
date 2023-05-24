@@ -462,7 +462,9 @@ Array.prototype.sort = function () {
 
 // Find the Difference in Age between Oldest and Youngest Family Members (29)
 
-
+function differenceInAges(ages) {
+    return [Math.min(...ages), Math.max(...ages), Math.max(...ages) - Math.min(...ages)]
+}
 
 // Blood-Alcohol Content (30)
 
