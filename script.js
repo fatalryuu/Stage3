@@ -148,7 +148,30 @@ const isReallyNaN = (val) => {
 
 // File Finder (14)
 
+const checkFolder = (files, path) => {
+    for (let folder in files) {
+        let newPath = path;
+        if (folder.indexOf(".") !== -1 && (folder.indexOf(".") === folder.lastIndexOf("."))) {
+            return newPath + folder;
+        } else {
+            newPath += folder + "/";
+            newPath = checkFolder(files[folder], newPath);
+            if (newPath !== "") {
+                return newPath;
+            }
+        }
+    }
+    return "";
+}
 
+function search(files) {
+    const path = checkFolder(files, "");
+    if (path) {
+        return path
+    } else {
+        throw new Error('No files!');
+    }
+}
 
 // Building a mini search engine (15)
 
