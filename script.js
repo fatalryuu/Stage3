@@ -218,7 +218,33 @@ function largest(n, array) {
 
 // Countdown - Longest Word (18)
 
+words = ["VAMPIRE", "SLICE", "GRAVE", "PADDLE", "CAVE"]
 
+function longestWord(letters) {
+    let result = [];
+    letters = letters.split("");
+    let savedWords = [...words];
+
+    letters.forEach(letter => {
+        words.forEach((word, i) => {
+            if (savedWords[i].indexOf(letter) !== -1) {
+                let arr = savedWords[i].split("");
+                arr.splice(savedWords[i].indexOf(letter), 1);
+                savedWords[i] = arr.join("");
+            }
+            if (savedWords[i].length === 0) {
+                result.push(words[i]);
+            }
+        })
+    })
+
+    result = [...new Set(result)];
+    result.sort((a, b) => b.length - a.length);
+    result = result.filter(w => w.length === result[0].length);
+    result.sort();
+
+    return result.length === 0 ? null : result;
+}
 
 // Compound Nouns, Common Nouns, and Adjectives Test (19)
 
