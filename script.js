@@ -530,7 +530,21 @@ function maxConsecutiveSequenceLength(array) {
 
 // Implementing a Queue (33)
 
+let Queue = function() {
+    this.queue = []; // Массив для хранения элементов очереди
+};
 
+Queue.prototype.enqueue = function(item) {
+    this.queue.push(item); // Добавление элемента в конец очереди
+};
+
+Queue.prototype.dequeue = function() {
+    return this.queue.shift(); // Удаление элемента из начала очереди и возвращение его значения
+};
+
+Queue.prototype.size = function() {
+    return this.queue.length; // Возвращает количество элементов в очереди
+};
 
 // Playing with Sets : Equal or Not ? (34)
 
