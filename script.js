@@ -604,7 +604,9 @@ function dataTypes (string) {
 
 // Captcha parser (40)
 
+function captchaParser(captcha) {
 
+}
 
 // My Aunt Sally (41)
 
