@@ -175,7 +175,27 @@ function search(files) {
 
 // Building a mini search engine (15)
 
+function searchEng(string, searchWord, searchMethod, newWord) {
+    if (!string || !searchWord || !searchMethod) {
+        return 'No valid input'
+    }
+    if (searchMethod < 1 || searchMethod > 2) {
+        return 'No valid input'
+    }
+    const pattern = /^[a-zA-Z0-9]+$/;
+    if (!pattern.test(searchWord) || !pattern.test(newWord)) {
+        return 'No valid input'
+    }
 
+    const regex = new RegExp('\\b' + searchWord + '\\b', 'g');
+    const matches = string.match(regex);
+
+    if (searchMethod === 1) {
+        return {matches: matches ? matches.length : 0, newString: ''};
+    } else {
+        return {matches: matches ? matches.length : 0, newString: string.replace(regex, newWord)};
+    }
+}
 
 // Search for letters (16)
 
