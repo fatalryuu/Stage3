@@ -385,7 +385,23 @@ function strCount(obj) {
 
 // Back to the Future? (25)
 
+function backToTheFuture (str) {
+    const months = {
+        'January': { to: 'October', days: 31},
+        'April': { to: 'July', days: 31},
+        'September': { to: 'December', days: 31},
+        'February': { to: 'March', days: 31},
+        'March': { to: 'November', days: 30},
+    }
+    str = str.split(' ')
+    const match = months[str[2]]
 
+    if (match && str[1] <= match.days) {
+        return `I'm leaving here on ${str[0]} ${str[1]} ${match.to}!`
+    }
+
+    return "Doc, I can't get back to the future!"
+}
 
 // Welcome! (26)
 
