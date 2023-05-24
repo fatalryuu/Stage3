@@ -592,7 +592,9 @@ function sumOfDifferences(arr) {
 
 // Additive Numbers (38)
 
+function findAdditiveNumbers(num) {
 
+}
 
 // dataTypes String to Array (39)
 
