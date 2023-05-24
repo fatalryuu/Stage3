@@ -474,7 +474,43 @@ function bloodAlcoholContent(drinks, weight, sex, time){
 
 // Generate An Array of Unique Strings (31)
 
+function uniqStrings(size, validPct, strSize) {
+    const validAmount = Math.floor(size * validPct);
+    const invalidAmount = size - validAmount;
+    const strings = [];
 
+    const generateValidString = () => {
+        const validChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
+        let validString = '';
+        const n = Math.round(Math.random() * (strSize[1] - strSize[0]) + strSize[0]);
+        for (let i = 0; i < n; i++) {
+            const randomChar = validChars[Math.floor(Math.random() * validChars.length)];
+            validString += randomChar;
+        }
+        return validString;
+    }
+
+    const generateInvalidString = () => {
+        const invalidChars = '`\'"~!@#$%^&*()[]{}:;<>?|/\\';
+        let invalidString = '';
+        const n = Math.round(Math.random() * (strSize[1] - strSize[0]) + strSize[0]);
+        for (let i = 0; i < n; i++) {
+            const randomChar = invalidChars[Math.floor(Math.random() * invalidChars.length)];
+            invalidString += randomChar;
+        }
+        return invalidString;
+    }
+
+    for (let i = 0; i < validAmount; i++) {
+        strings.push(generateValidString());
+    }
+
+    for (let i = 0; i < invalidAmount; i++) {
+        strings.push(generateInvalidString());
+    }
+
+    return strings;
+}
 
 // Length of the longest sequence of consecutive integers (32)
 
