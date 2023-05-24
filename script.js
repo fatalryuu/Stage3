@@ -598,7 +598,9 @@ function findAdditiveNumbers(num) {
 
 // dataTypes String to Array (39)
 
+function dataTypes (string) {
 
+}
 
 // Captcha parser (40)
 
