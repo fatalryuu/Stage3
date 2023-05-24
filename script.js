@@ -649,11 +649,16 @@ function args(cmd) {
 
 // ES6 string addition (45)
 
+function joinStrings(string1, string2){
+    return `${string1} ${string2}`;
+}
 
 // L1: Bartender, drinks! (46)
 
 
+
 // Well of Ideas - Easy Version (47)
+
 
 
 // Power .bind() (48)
