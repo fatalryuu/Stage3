@@ -276,7 +276,36 @@ function part(word) {
 
 // Correct the time-string (20)
 
+function timeCorrect(time) {
+    if (!time) {
+        return time;
+    }
+    let parts = time.split(":");
+    let hours = Number(parts[0]);
+    let minutes = Number(parts[1]);
+    let seconds = Number(parts[2]);
 
+    if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
+        return null;
+    }
+
+    if (seconds > 59) {
+        minutes += Math.floor(seconds / 60);
+        seconds %= 60;
+    }
+    if (minutes > 59) {
+        hours += Math.floor(minutes / 60);
+        minutes %= 60;
+    }
+    if (hours > 23) {
+        hours %= 24;
+    }
+    return `${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}`;
+}
+
+const addZero = (num) => {
+    return num.toString().length === 1 ? "0" + num : num;
+}
 
 // Extract Values and Units (21)
 
