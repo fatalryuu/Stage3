@@ -142,7 +142,9 @@ function checkExam(arr1, arr2) {
 
 // isReallyNaN (13)
 
-
+const isReallyNaN = (val) => {
+    return Number.isNaN(val);
+};
 
 // File Finder (14)
 
