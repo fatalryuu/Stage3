@@ -611,7 +611,7 @@ function findAdditiveNumbers(num) {
         while (num) {
             let next = arr[i] + arr[i + 1] + '';
             let l = next.length;
-            if (num.slice(0, l) !== next)  {
+            if (num.slice(0, l) !== next) {
                 return false
             }
             arr.push(+next);
@@ -636,7 +636,10 @@ function findAdditiveNumbers(num) {
 // dataTypes String to Array (39)
 
 function dataTypes(string) {
-
+    return string.replace(/\d+/g, ' _number_ ')
+        .replace(/true|false/gi, ' _boolean_ ')
+        .replace(/\b[a-z]+\b/gi, ' _string_ ')
+        .match(/[a-z]+/gi);
 }
 
 // Captcha parser (40)
@@ -717,12 +720,12 @@ const changeTime = (input, delta) => {
 // Parsing Commandline Arguments (44)
 
 function args(cmd) {
-    return cmd.replace(/[&;>|].*$/,'').trim().split(' ');
+    return cmd.replace(/[&;>|].*$/, '').trim().split(' ');
 }
 
 // ES6 string addition (45)
 
-function joinStrings(string1, string2){
+function joinStrings(string1, string2) {
     return `${string1} ${string2}`;
 }
 
@@ -731,14 +734,21 @@ function joinStrings(string1, string2){
 function getDrinkByProfession(param) {
     param = param.toLowerCase();
 
-    switch(param) {
-        case "jabroni": return "Patron Tequila";
-        case "school counselor": return "Anything with Alcohol";
-        case "programmer": return "Hipster Craft Beer";
-        case "bike gang member": return "Moonshine";
-        case "politician": return	"Your tax dollars";
-        case "rapper": return "Cristal";
-        default: return "Beer";
+    switch (param) {
+        case "jabroni":
+            return "Patron Tequila";
+        case "school counselor":
+            return "Anything with Alcohol";
+        case "programmer":
+            return "Hipster Craft Beer";
+        case "bike gang member":
+            return "Moonshine";
+        case "politician":
+            return "Your tax dollars";
+        case "rapper":
+            return "Cristal";
+        default:
+            return "Beer";
     }
 }
 
@@ -757,9 +767,9 @@ function well(x) {
 
 // Power .bind() (48)
 
-Function.prototype.bind = function(ctx) {
+Function.prototype.bind = function (ctx) {
     const func = this;
-    return function(...args) {
+    return function (...args) {
         const rightContext = this === globalThis ? ctx : this;
         return func.apply(rightContext, args);
     }
