@@ -600,7 +600,37 @@ function sumOfDifferences(arr) {
 // Additive Numbers (38)
 
 function findAdditiveNumbers(num) {
+    const check = (i, j, num) => {
+        if ((num.slice(0, i).length > 1 && num.slice(0, i)[0] === "0") ||
+            (num.slice(i, j).length > 1 && num.slice(i, j)[0] === "0")) {
+            return false;
+        }
+        let arr = [+num.slice(0, i), +num.slice(i, j)]
+        i = 0
+        num = num.slice(j)
+        while (num) {
+            let next = arr[i] + arr[i + 1] + '';
+            let l = next.length;
+            if (num.slice(0, l) !== next)  {
+                return false
+            }
+            arr.push(+next);
+            i++;
+            num = num.slice(l);
+        }
+        return arr.map(el => el.toString());
+    }
 
+    let n = num.length
+    for (let i = 1; i < n / 2 + 1; i++) {
+        for (let j = i + 1; j < n * 2 / 3 + 1; j++) {
+            let result = check(i, j, num)
+            if (result) {
+                return result
+            }
+        }
+    }
+    return []
 }
 
 // dataTypes String to Array (39)
