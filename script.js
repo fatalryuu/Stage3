@@ -641,8 +641,38 @@ function dataTypes(string) {
 
 // Captcha parser (40)
 
+/**
+ * @param {string} captcha
+ * @returns {string}
+ */
 function captchaParser(captcha) {
-
+    const numbers = {
+        1: ['___ ', '   |', '   |', '   |', '   |', '   |'],
+        2: ['____   ', '    |  ', '    |  ', '    | /', '    |/ '],
+        3: ['____', '   /', '  / ', '  \\ ', '___\\'],
+        4: ['   /|', '  / |', ' /  |', '/___|', '    |', '    |'],
+        5: ['____|', '|    ', '|___ ', '    |', '____|'],
+        6: ['______', '|     ', '|___  ', '|   | ', '|___| '],
+        7: ['______', '|   / ', '   /  ', ' _/_  ', ' /    ', '/     '],
+        8: ['____ ', '|   |', '|___|', '|   |', '|___|'],
+        9: ['  ___  ', '  |__|_', '     | ', '     | ', '|____| ']
+    };
+    let captchaArr = captcha.split('\n');
+    let result = '';
+    for (let i = 1; i < 10; i++) {
+        for (let j = 0; j < captchaArr.length - numbers[i].length + 1; j++) {
+            for (let k = 0; k < captchaArr[0].length - numbers[i][0].length + 1; k++) {
+                if (captchaArr
+                    .slice(j, j + numbers[i].length)
+                    .map(e => e.substring(k, k + numbers[i][0].length))
+                    .join('\n')
+                    .replace(/[^_|\\/ \n]/g, ' ') === numbers[i].join('\n')) {
+                    result += i;
+                }
+            }
+        }
+    }
+    return result;
 }
 
 // My Aunt Sally (41)
